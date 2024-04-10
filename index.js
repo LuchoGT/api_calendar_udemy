@@ -18,11 +18,17 @@ app.use(cors())
 
 //Directorio publico
 
-app.use(express.static('public'));
+// app.use(express.static('public'));
 
 //Lectura y parseo del body
 
 app.use(express.json());
+
+
+app.get("/", (req, res) =>{
+    res.send("Hola mi server en Express calendar back ");
+  });
+  
 
 //Rutas
 app.use('/api/auth', require('./routes/auth'));
